@@ -1,0 +1,130 @@
+
+==========================================================
+   Social Network Explorer  |  ETCCDS202
+==========================================================
+
+  Load demo data? (y/n): 
+==========================================================
+  DEMO MODE
+==========================================================
+
+  [1] Adding users...
+  ✓  u1 (Alice)
+  ✓  u2 (Bob)
+  ✓  u3 (Carol)
+  ✓  u4 (David)
+  ✓  u5 (Eve)
+  ✓  u6 (Frank)
+  ✓  u7 (Grace)
+  ✓  u8 (Hemanth)
+
+  [2] Updating profiles...
+  ✓ u1 bio, u3 age+profession
+
+  [3] Sample profiles:
+
+  ┌─ Profile ──────────────────────────────────┐
+  │  ID         : u1                            │
+  │  Name       : Alice                         │
+  │  Age        : 22                            │
+  │  Interests  : sports, tech, music           │
+  │  City       : Delhi                         │
+  │  Profession : Engineer                      │
+  │  Bio        : Loves hiking and open-source. │
+  └─────────────────────────────────────────────┘
+
+  ┌─ Profile ──────────────────────────────────┐
+  │  ID         : u3                            │
+  │  Name       : Carol                         │
+  │  Age        : 22                            │
+  │  Interests  : music, art, travel            │
+  │  City       : Pune                          │
+  │  Profession : Senior Designer               │
+  │  Bio        :                               │
+  └─────────────────────────────────────────────┘
+
+  ┌─ Profile ──────────────────────────────────┐
+  │  ID         : u5                            │
+  │  Name       : Eve                           │
+  │  Age        : 23                            │
+  │  Interests  : gaming, music, coding         │
+  │  City       : Chennai                       │
+  │  Profession : Student                       │
+  │  Bio        :                               │
+  └─────────────────────────────────────────────┘
+
+  [4] Adding friendships...
+  ✓  u1 ↔ u2
+  ✓  u1 ↔ u3
+  ✓  u2 ↔ u4
+  ✓  u3 ↔ u5
+  ✓  u4 ↔ u5
+  ✓  u4 ↔ u6
+  ✓  u5 ↔ u7
+  ✓  u6 ↔ u7
+  ✓  u7 ↔ u8
+  ✓  u2 ↔ u8
+
+  [5] Removing u4 ↔ u6...
+  ✓ done
+
+  [6] Friend lists:
+  Friends of 'u1': u2 → u3
+  Friends of 'u5': u3 → u4 → u7
+
+  [7] BFS queries:
+
+  BFS  [u1] → [u7]
+  Hops : 3
+  Path : u1 ──► u2 ──► u8 ──► u7
+
+  BFS  [u1] → [u8]
+  Hops : 2
+  Path : u1 ──► u2 ──► u8
+
+  BFS  [u1] → [u9]
+  No path found.
+
+  [8] DFS queries:
+
+  DFS  (start='u1', depth=2)
+  Level 1: u2, u3
+  Level 2: u4, u5, u8
+  Total: 5 users
+
+  DFS  (start='u1', depth=3)
+  Level 1: u2, u3
+  Level 2: u4, u8
+  Level 3: u5, u7
+  Total: 6 users
+
+  [9] Top-5 suggestions for u1:
+  #    ID       Name         Score
+  1    u4       David        2
+  2    u8       Hemanth      2
+  3    u5       Eve          1
+  4    u7       Grace        1
+
+  [10] Sort comparison:
+
+  Sort comparison (4 items):
+  Insertion : 4.22 µs  → [(1, 'u3'), (1, 'u6'), (1, 'u5')]
+  Merge     : 3.73 µs  → [(1, 'u3'), (1, 'u6'), (1, 'u5')]
+  Same result: True
+
+==========================================================
+
+
+  ╔══════════════════════════════════════════════╗
+  ║       Social Network Explorer (SNE)          ║
+  ╠══════════════════════════════════════════════╣
+  ║  1. Add user          6. Show connections    ║
+  ║  2. View profile      7. Shortest path (BFS) ║
+  ║  3. Update profile    8. Friends-of-friends  ║
+  ║  4. Add friendship    9. Friend suggestions  ║
+  ║  5. Remove friend    10. All profiles        ║
+  ║                      11. Full graph  0. Exit ║
+  ╚══════════════════════════════════════════════╝
+  Option: 
+  Bye!
+
